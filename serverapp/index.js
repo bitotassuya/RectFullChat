@@ -15,9 +15,13 @@ const io = new Server(server, {
 app.use(helmet());
 app.use(express.json());
 
+
+/*
 app.get("/", (req, res) => {
-    res.json("hi");
+    res.json("Hello Server");
 })
+
+*/
 
 
 
