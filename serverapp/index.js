@@ -3,6 +3,7 @@ const { Server } = require("socket.io");
 const app = express();
 const helmet = require("helmet");
 const cors = require("cors");
+const authRouter = require("./routers/authRouter");
 
 const server = require("http").createServer(app);
 
@@ -21,7 +22,7 @@ app.use(
     })
 )
 app.use(express.json());
-
+app.use("/auth".authRouter);
 
 /*
 app.get("/", (req, res) => {
