@@ -1,19 +1,12 @@
-const express = require('express');
+const express = require("express");
+const validateForm = require("../controllers/validateForm");
 const router = express.Router();
-const Yup = require("yup");
 
-const formSchema = Yup.object({
-    username: Yup.string()
-        .required("กรุณาใส่ Username!")
-        .min(6, "Username สั้นเกินไป!")
-        .max(28, "Username ยาวเกินไป!"),
-    password: Yup.string()
-        .required("กรุณาใส่Password!")
-        .min(6, "Password สั้นเกินไป!")
-        .max(28, "Password ยาวเกินไป!"),
+router.post("/login", (req, res) => {
+    validateForm(req, res);
 });
 
-router.post("/login", (req, res))
-
-
+router.post("/signup", (req, res) => {
+    validateForm(req, res);
+});
 module.exports = router;
