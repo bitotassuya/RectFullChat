@@ -30,9 +30,9 @@ app.use(
         resave: false,
         saveUninitialized: false,
         cookie: {
-            secure: process.env.environment === "production",
+            secure: process.env.ENVIRONMENT === "production",
             httpOnly: true,
-            sameSite: process.env.environment === "production" ? "none"
+            sameSite: process.env.ENVIRONMENT === "production" ? "none"
                 : "lax"
         },
     })
